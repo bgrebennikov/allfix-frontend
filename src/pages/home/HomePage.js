@@ -1,3 +1,5 @@
+import "react-slideshow-image/dist/styles.css";
+import {Slide} from 'react-slideshow-image';
 import {Link, useParams} from "react-router-dom";
 import {useState} from "react";
 
@@ -61,7 +63,14 @@ export default function HomePage() {
         }
     ])
 
-    console.log(brand)
+    const reviewImages = [
+        `${process.env.PUBLIC_URL}/reviews/review2.png`,
+        `${process.env.PUBLIC_URL}/reviews/review2.png`,
+        `${process.env.PUBLIC_URL}/reviews/review2.png`,
+        `${process.env.PUBLIC_URL}/reviews/review2.png`,
+        `${process.env.PUBLIC_URL}/reviews/review2.png`,
+        `${process.env.PUBLIC_URL}/reviews/review2.png`
+    ];
 
     return (
         <>
@@ -180,7 +189,7 @@ export default function HomePage() {
                 <div className="sp__list">
                     <div className="sp__list__item">
                         <img src={`${process.env.PUBLIC_URL}/principles/finger_up.png`}
-                             className={"sp__item__image"}  alt=""/>
+                             className={"sp__item__image"} alt=""/>
                         <div className="sp__item__title">
                             Клиент всегда прав
                         </div>
@@ -191,7 +200,7 @@ export default function HomePage() {
 
                     <div className="sp__list__item">
                         <img src={`${process.env.PUBLIC_URL}/principles/like.png`}
-                             className={"sp__item__image"}  alt=""/>
+                             className={"sp__item__image"} alt=""/>
                         <div className="sp__item__title">
                             Высокое качество работы - Основа успеха
                         </div>
@@ -202,7 +211,7 @@ export default function HomePage() {
 
                     <div className="sp__list__item">
                         <img src={`${process.env.PUBLIC_URL}/principles/agree.png`}
-                             className={"sp__item__image"}  alt=""/>
+                             className={"sp__item__image"} alt=""/>
                         <div className="sp__item__title">
                             Лучшая реклама
                             - довольный клиент
@@ -214,7 +223,7 @@ export default function HomePage() {
 
                     <div className="sp__list__item">
                         <img src={`${process.env.PUBLIC_URL}/principles/ok.png`}
-                             className={"sp__item__image"}  alt=""/>
+                             className={"sp__item__image"} alt=""/>
                         <div className="sp__item__title">
                             Мало быть профессионалом
                             - надо ещё делать на совесть
@@ -243,7 +252,8 @@ export default function HomePage() {
                                 Клиентов
                             </div>
                             <div className="sw__content__bottom__subtitle">
-                                Делают выбор в пользу частных мастеров потому что это существенно снижает стоимость ремонта!
+                                Делают выбор в пользу частных мастеров потому что это существенно снижает стоимость
+                                ремонта!
                             </div>
                         </div>
                     </div>
@@ -256,17 +266,203 @@ export default function HomePage() {
                             <div className="sw__content__subtitle">Я предоставляю</div>
                         </div>
                         <div className="sw__mid">
-                            <h1 className="sw__value__large">3<span>Года</span>  </h1>
+                            <h1 className="sw__value__large">3<span>Года</span></h1>
                         </div>
                         <div className="sw__bottom">
                             <div className="sw__title">Гарантии</div>
-                            <div className="sw__content__bottom__subtitle">Я очень дорожу своей репутацией и доверием клиентов! Бесплатно отремонтирую вашу технику, если она повторно сломается в течении 3х лет!
+                            <div className="sw__content__bottom__subtitle">Я очень дорожу своей репутацией и доверием
+                                клиентов! Бесплатно отремонтирую вашу технику, если она повторно сломается в течении 3х
+                                лет!
                             </div>
                         </div>
                     </div>
 
 
                 </div>
+            </section>
+
+            <section className="section__advantages">
+                <h1 className="sa__title">
+                    Цены ниже срединих на <span className={"text-blue"}>30%</span>
+                </h1>
+
+                <div className="sa__content">
+                    <div className="sa__content__left">
+
+                        <div className="sa__advantages__list">
+                            <div className="sa__advantage__item">
+
+                                <div className="sa__item__image">
+                                    <img src={`${process.env.PUBLIC_URL}/advantages/weight.png`} alt=""/>
+                                    <div className="sa__item__image__overlay"></div>
+                                </div>
+
+                                <div className="sa__item__body">
+                                    <div className="sa__item__title">
+                                        Справедливая оценка работы
+                                    </div>
+
+                                    <div className="sa__item__description">
+                                        Я не пытаюсь раскрутить на завышенную стоимость, а ремонтирую за адекватную и
+                                        доступную цену
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="sa__advantage__item">
+
+                                <div className="sa__item__image">
+                                    <img src={`${process.env.PUBLIC_URL}/advantages/recomend.png`} alt=""/>
+                                    <div className="sa__item__image__overlay"></div>
+                                </div>
+
+                                <div className="sa__item__body">
+                                    <div className="sa__item__title">
+                                        Ориентация на рекомендации
+                                    </div>
+
+                                    <div className="sa__item__description">
+                                        Благодаря низким ценам и качественной работе многие меня рекомендуют, а
+                                        "сарафанное радио" - лучшая реклама
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="sa__advantage__item">
+
+                                <div className="sa__item__image">
+                                    <img src={`${process.env.PUBLIC_URL}/advantages/board.png`} alt=""/>
+                                    <div className="sa__item__image__overlay"></div>
+                                </div>
+
+                                <div className="sa__item__body">
+                                    <div className="sa__item__title">
+                                        Запчасти по низким ценам
+                                    </div>
+
+                                    <div className="sa__item__description">
+                                        Я закупаю запчасти напрямую у производителей в том числе за границей, что
+                                        позволяет существенно снизить стоимость ремонта без потерии качаства
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div className="sa__content__right">
+                        <form action="/" className="sa__form">
+                            <h1 className="sa__form__title text-blue">
+                                Убедитесь<br/>в доступности моих цен!
+                            </h1>
+
+                            <div className="sa__form__inputs">
+                                <input type="text" name="repair_reason" id="repair_reason"
+                                       placeholder={"Опишите поломку"}
+                                />
+
+                                <input type="number" name="repair_reason" id="repair_reason"
+                                       placeholder={"Укажите телефон"}
+                                />
+                            </div>
+
+                            <button className={"btn__big__yellow"}>Узнать цену</button>
+
+                            <img className={"drill_image"} src={`${process.env.PUBLIC_URL}/advantages/drill.png`}
+                                 alt=""/>
+
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+
+            <section className="section__about">
+                <h1 className="sa__title">
+                    Дипломированный инженер
+                </h1>
+                <p className="sa__subtitle">
+                    Профессионализм и высокий уровень обслуживания
+                </p>
+
+                <div className="sab__content">
+                    <div className="sab__content__line"></div>
+                    <div className="sab__master__photo">
+                        <img src={`${process.env.PUBLIC_URL}/about/master_photo.png`} alt=""/>
+                    </div>
+                    <div className="sab__master__content">
+                        <div className="sab__content__body">
+                            <p>
+                                Моя основная цель, сделать не дорого, но качественно, чтобы вы остались довольны и
+                                рекомендовали меня своим близким.
+                            </p>
+
+                            <p>
+                                Я всегда рад помочь своим клиентам и ищу лучшее решение для них!Обращайтесь вы не
+                                пожалеете
+                                точно!
+                            </p>
+                            <p>
+                                Могу вас заверить, что вы будете в восторге от произведенного ремонта и цена вас
+                                порадует.
+                            </p>
+
+                        </div>
+
+                        <div className="sab__content__sign">
+                            <span className={"sign__name text-blue"}>Георгий Крылов</span>
+                            <span>Опыт работы - 10 лет</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section className="section__reviews">
+                <h1 className="sr__title">Отзывы</h1>
+                <p className="sr__subtitle">
+                    Прочитайте что говорят обо мне клиенты
+                </p>
+
+                <Slide
+                    slidesToScroll={1}
+                    slidesToShow={3}
+                    indicators={false}
+                >
+                    {reviewImages.map((item, index) =>
+                        <div className="each-slide-effect">
+                            <img src={item} alt=""/>
+                        </div>
+                    )}
+                </Slide>
+
+            </section>
+
+            <section className="section__contacts">
+                <h1 className={"sc__title"}>Контакты</h1>
+
+                <div className="sc__content">
+                    <div className="sc__maps">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A46e7f4b564cbbebf08ebb19ab893144398b943a0a7349d11697c3d36b80dd260&amp;source=constructor"
+                            width="500" height="400" frameBorder="0"></iframe>
+                    </div>
+                    <div className="sc__data">
+                        <ul>
+                            <li>
+                                <a href="#">Контактный телефон:</a>
+                            </li>
+                            <li>
+                                <a href="#">Контактный телефон:</a>
+                            </li>
+                            <li>
+                                <a href="#">Контактный телефон:</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </section>
 
         </>

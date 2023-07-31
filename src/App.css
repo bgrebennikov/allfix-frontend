@@ -482,12 +482,11 @@ button {
     }
 
     /*  WARRANTY SECTION  */
-
-    .section__warranty{
+    .section__warranty {
         padding: 1rem;
     }
 
-    .section__warranty__content{
+    .section__warranty__content {
         display: flex;
         flex-direction: column;
         color: white;
@@ -496,7 +495,7 @@ button {
         gap: 1rem
     }
 
-    .section__warranty__content > div{
+    .section__warranty__content > div {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -506,49 +505,49 @@ button {
         padding: 2rem;
     }
 
-    .sw__content__left{
+    .sw__content__left {
         flex: 1;
     }
 
-    .sw__content__right{
+    .sw__content__right {
         flex: 1;
     }
 
-    .sw__content__left > div{
+    .sw__content__left > div {
         flex: 1;
     }
 
-    .sw__content__right > div{
+    .sw__content__right > div {
         flex: 1;
     }
 
-    .sw__title{
+    .sw__title {
         font-size: 26px;
         font-weight: bold;
     }
 
-    .sw__content__subtitle{
+    .sw__content__subtitle {
         font-size: 16px;
         font-weight: 400;
         line-height: 16pt;
     }
 
-    .sw__content__bottom__subtitle{
+    .sw__content__bottom__subtitle {
         font-size: 16px;
         font-weight: 400;
         line-height: 18pt;
         width: 87%;
     }
 
-    .sw__value__large{
+    .sw__value__large {
         font-size: 130px;
     }
 
-    .sw__value__large > span{
+    .sw__value__large > span {
         font-size: 70px;
     }
 
-    .sw__bottom{
+    .sw__bottom {
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
@@ -1007,12 +1006,11 @@ button {
     }
 
     /*  WARRANTY SECTION  */
-
-    .section__warranty{
+    .section__warranty {
         padding: 100px;
     }
 
-    .section__warranty__content{
+    .section__warranty__content {
         display: flex;
         color: white;
         background: #00AEEF;
@@ -1023,61 +1021,311 @@ button {
         gap: 100px;
     }
 
-    .section__warranty__content > div{
+    .section__warranty__content > div {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
     }
 
-    .sw__content__left{
+    .sw__content__left {
         flex: 1;
     }
 
-    .sw__content__right{
+    .sw__content__right {
         flex: 1;
     }
 
-    .sw__content__left > div{
+    .sw__content__left > div {
         flex: 1;
     }
 
-    .sw__content__right > div{
+    .sw__content__right > div {
         flex: 1;
     }
 
-    .sw__title{
+    .sw__title {
         font-size: 36px;
         font-weight: bold;
     }
 
-    .sw__content__subtitle{
+    .sw__content__subtitle {
         font-size: 22px;
         font-weight: 400;
         line-height: 22pt;
     }
 
-    .sw__content__bottom__subtitle{
+    .sw__content__bottom__subtitle {
         font-size: 16px;
         font-weight: 400;
         line-height: 22pt;
         width: 87%;
     }
 
-    .sw__value__large{
+    .sw__value__large {
         font-size: 155px;
     }
 
-    .sw__value__large > span{
+    .sw__value__large > span {
         font-size: 110px;
     }
 
-    .sw__bottom{
+    .sw__bottom {
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
         row-gap: .5rem;
     }
 
+    /*  SECTION ADVANTAGES  */
+    .section__advantages {
+        padding: 0 100px;
+    }
+
+    .sa__advantages__list {
+        margin: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    .sa__title {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .sa__subtitle {
+        width: fit-content;
+        margin: 0 auto;
+        font-weight: 600;
+        padding-top: 6px;
+    }
+
+    .sa__content {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+
+    .sa__content__left {
+
+    }
+
+    .sa__advantage__item {
+        display: flex;
+    }
+
+    .sa__item__image {
+        position: relative;
+        max-height: 128px;
+        max-width: 128px;
+        align-self: center;
+    }
+
+    .sa__item__image > img {
+        max-width: 128px;
+        min-height: 128px;
+        object-fit: contain;
+        transform: scale(60%);
+        animation-name: imageScalingAnimation;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+        animation-duration: 1.5s;
+    }
+
+    .sa__item__image__overlay {
+        border: 1rem solid #f2f2f2;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    .sa__item__body {
+        padding: 1rem;
+        max-width: 360px;
+    }
+
+    .sa__item__title {
+        font-weight: 600;
+        font-size: 14pt;
+    }
+
+    .sa__item__description {
+        padding: .5rem 0;
+        line-height: 16pt;
+    }
+
+    .sa__content__right {
+        padding: 3rem 0;
+    }
+
+    .sa__form {;
+        padding: 2rem 0;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 85%;
+        box-shadow: 3px 3px 2rem rgba(0, 0, 0, 0.25);
+        position: relative;
+    }
+
+    .sa__form > * {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .sa__form__title {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .sa__form__inputs {
+
+    }
+
+    .sa__form__inputs > input {
+        width: calc(100% - 2.5rem + 8px);
+        padding: 1rem;
+        margin-top: .5rem;
+        border: none;
+        border-radius: 12px;
+        background-color: #f2f2f2;
+    }
+
+    .drill_image {
+        position: absolute;
+        width: 160px;
+        top: 0;
+        left: 0;
+        transform: translate(-2.8rem, -1.5rem) rotate(-35deg);
+        animation-name: drill_animation;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+    }
+
+    /*  SECTION ABOUT  */
+    .section__about {
+        padding: 100px;
+    }
+
+    .sab__content {
+        display: flex;
+        padding-top: 3rem;
+        margin: 3rem 0;
+        position: relative;
+    }
+
+    .sab__master__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 2rem;
+    }
+
+    .sab__content__body {
+
+    }
+
+    .sab__content__body > p {
+        padding-bottom: 1rem;
+        line-height: 20pt;
+        font-size: 14pt;
+    }
+
+    .sab__content__sign {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .sign__name {
+        font-size: 22pt;
+        font-weight: bold;
+    }
+
+    .sab__content__line {
+        width: 5px;
+        height: 100%;
+        background-color: #00AEEF;
+        border-radius: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    /*  SECTION REVIEWS  */
+    .sr__title {
+        text-align: center;
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .sr__subtitle {
+        width: fit-content;
+        margin: 0 auto;
+        font-weight: 600;
+        padding-top: 6px;
+    }
+
+    /*  REVIEWS SECTION  */
+    .react-slideshow-container {
+        padding-top: 100px;
+        padding-bottom: 3rem;
+    }
+
+    .each-slide-effect > img {
+        max-height: 720px;
+        pointer-events: none;
+    }
+
+    /*  SECTION CONTACTS  */
+
+    .sc__title{
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .sc__content{
+        padding: 3rem 100px 3rem 100px;
+        display: flex;
+    }
+
+    .sc__data{
+        margin: 0 1rem;
+    }
+
+    .sc__data > ul{
+        list-style: none;
+    }
+
+}
+
+@keyframes drill_animation {
+    from {
+        transform: translate(-2.8rem, -1.5rem) rotate(-35deg);
+    }
+
+    to {
+        transform: translate(-2.8rem, -1.5rem) rotate(0deg);
+    }
+}
+
+@keyframes imageScalingAnimation {
+    from {
+        transform: scale(60%);
+    }
+
+    to {
+        transform: scale(75%);
+    }
 }
 
 .btn__big__yellow {
