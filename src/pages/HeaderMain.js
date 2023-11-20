@@ -3,7 +3,8 @@ import {Link, useNavigate} from "react-router-dom";
 
 export default function HeaderMain() {
 
-    const [activeCategoryIndex, setActiveCategoryIndex] = useState(-1)
+    const [activeCategoryTitle, setActiveCategoryTitle] = useState("")
+    const [activeSubCategoryTitle, setActiveSubCategoryTitle] = useState("")
     const [isDropdownOpen, setDropdownOpen] = useState(false)
 
     const categoriesList = [
@@ -13,49 +14,90 @@ export default function HeaderMain() {
             subcategories: [
                 {
                     title: "Ремонт системных блоков",
-                    path: "pc",
+                    path: "/sys_block",
                 },
                 {
                     title: "Ремонт ноутбуков",
-                    path: "pc",
+                    path: "/laptop",
                 },
                 {
                     title: "Ремонт нетбуков",
-                    path: "pc",
+                    path: "/notebook",
                 },
                 {
                     title: "Ремонт моноблоков",
-                    path: "pc",
+                    path: "/monoblock",
                 }
             ]
         },
-        {
-            title: "Ремонт телевизоров",
-            path: "tv"
-        },
-        {
-            title: "Ремонт холодильников",
-            path: "pc"
-        },
+        // {
+        //     title: "Ремонт телевизоров",
+        //     path: "tv"
+        // },
+        // {
+        //     title: "Ремонт холодильников",
+        //     path: "coolers"
+        // },
+
         {
             title: "Ремонт стиральных машин",
-            path: "pc"
+            path: "washing",
+            subcategories: [
+                {
+                    title: "Bosch",
+                    path: "/bosch"
+                },
+                {
+                    title: "Samsung",
+                    path: "/samsung"
+                },
+                {
+                    title: "LG",
+                    path: "/lg"
+                },
+                {
+                    title: "Siemens",
+                    path: "/siemens"
+                },
+                {
+                    title: "Electrolux",
+                    path: "/electrolux"
+                },
+                {
+                    title: "Whirlpool",
+                    path: "/whirlpool"
+                }
+            ]
         },
-        {
-            title: "Ремонт посудомоек",
-            path: "washing"
-        },
-        {
-            title: "Ремонт сантехники",
-            path: "pc"
-        }
+        // {
+        //     title: "Ремонт посудомоек",
+        //     path: "washing"
+        // }
 
     ]
 
     const navigate = useNavigate()
 
-    function onItemSelected(e, index) {
-        setActiveCategoryIndex(index);
+    function onItemSelected(e, index, item) {
+        setActiveCategoryTitle(item.title);
+
+        if (isDropdownOpen && item.subcategories.length === 0) {
+            setTimeout(() => {
+                setDropdownOpen(false)
+            }, 500)
+        }
+
+    }
+
+    function onSubItemSelected(e, index, item) {
+        setActiveSubCategoryTitle(item.title);
+
+        if (isDropdownOpen && item.subcategories.length === 0) {
+            setTimeout(() => {
+                setDropdownOpen(false)
+            }, 500)
+        }
+
     }
 
     function handleDropdown(e) {
@@ -65,11 +107,11 @@ export default function HeaderMain() {
 
     return (
         <>
-            <header>
-                <a href={"/"} className="header__logo">
+            <header className={"header__main"}>
+                <a href={"/"} className="main__header__logo">
                     <img className={"header__logo__img"} src={`${process.env.PUBLIC_URL}/logo.svg`} alt=""/>
                     <div className="master__name">
-                        <p className="master__firstname">Мастер Крылов</p>
+                        <p className="master__firstname">Мастер Лебедев</p>
                         <p className="master__slogan">ремонт бытовой техники</p>
                     </div>
                 </a>
@@ -82,46 +124,53 @@ export default function HeaderMain() {
 
                 <ul className="nav__items">
                     <li>
-                        <a href="#">Обо мне</a>
+                        {/*<a href="#">Обо мне</a>*/}
                     </li>
                     <li>
-                        <a href="#">Отзывы</a>
+                        <Link to={"/reviews"}>Отзывы</Link>
                     </li>
                     <li>
-                        <a href="#">Контакты</a>
+                        <Link to={"/contacts"}>Контакты</Link>
                     </li>
                     <li>
-                        <a href="#">Блог</a>
+                        {/*<a href="#">Блог</a>*/}
                     </li>
                 </ul>
 
                 <div className="phone__item">
-                    <p className="phone__number">+7 999-171-00-49</p>
-                    <a href="#" className="request_call_btn">Заказать звонок</a>
+                    <p className="phone__number">+7 993-471-00-49</p>
+                    <a href="tel:+79934710049" className="request_call_btn">Заказать звонок</a>
                 </div>
 
                 <div className="nav__toggle__menu__btn">
-                    <a href="#" onClick={(e) => handleDropdown(e)}>=</a>
+                    <a href="#" onClick={(e) => handleDropdown(e)}><img
+                        className={"nav__toggle__menu_icon"}
+                        src={`${process.env.PUBLIC_URL}/icons/menu.svg`}
+                        alt=""/>
+                    </a>
                 </div>
 
             </header>
 
-            <ul className={`nav__categories ${isDropdownOpen ? "display-block" : ""}`}>
+            <ul className={`nav__categories ${isDropdownOpen ? "mob__categories__visible" : ""}`}>
                 {categoriesList.map((categoryItem, index) =>
-                    <li className={"nav__categories_element"}>
+                    <li className={"nav__categories_element"} key={index}>
                         <Link
-                            className={` ${activeCategoryIndex === index && "text-blue"}`}
-                            onClick={(e) => onItemSelected(e, index)}
-                            to={`/${categoryItem.path}`}>{categoryItem.title}</Link>
+                            className={` ${activeSubCategoryTitle === index && "text-blue"}`}
+                            onClick={(e) => onItemSelected(e, index, categoryItem)}
+                            to={`/${categoryItem.path}`}
+                        >{categoryItem.title}
+                        </Link>
                         <div
-                            className={` ${activeCategoryIndex === index ? "underline__active" : "underline__effect"}`}></div>
+                            className={` ${categoryItem.title === activeCategoryTitle ? "underline__active" : "underline__effect"}`}></div>
 
                         <ul className="nav__dropdown">
                             {categoryItem.subcategories?.map((subItem, index) =>
 
-                                <li>
-                                    <a href={subItem.path} onClick={(e) => e.preventDefault()}>{subItem.title}</a>
-                                    <div className="underline__effect"></div>
+                                <li key={index}>
+                                    <Link to={categoryItem.path+subItem.path} onClick={(e) => onSubItemSelected(e, index, subItem)}>{subItem.title}</Link>
+                                    <div
+                                        className={` ${categoryItem.title === activeSubCategoryTitle ? "underline__active" : "underline__effect"}`}></div>
                                 </li>
                             )}
                         </ul>
@@ -129,7 +178,6 @@ export default function HeaderMain() {
                     </li>
                 )}
             </ul>
-
         </>
     )
 }
