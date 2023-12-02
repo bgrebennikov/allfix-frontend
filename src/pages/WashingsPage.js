@@ -13,6 +13,7 @@ import {sendFeedbackForm} from "../api/FeedbackApi";
 import styled from "styled-components";
 import {color} from "framer-motion";
 import {ActionButton, ActionButtonState} from "./components/ActionButton";
+import SectionCatMain from "./components/SectionCatMain";
 
 const PhoneErrorLabel = styled.label`
   display: block;
@@ -140,53 +141,13 @@ export default function WashingsPage() {
 
     return (
         <>
-            <section className="section__cat__main">
 
-                <div className="scat__content">
-
-                    <div className="scat__content__left">
-
-                        <h1 className="scat__title">
-                            Ремонт стиральных
-                            машин {brand ? brand.charAt(0).toUpperCase() + brand.slice(1, brand.length) : ""} в Самаре
-                            <span className={"text-yellow"}><br/>от 500 Рублей</span>
-                        </h1>
-
-                        <form action="#" onSubmit={handleFormSubmit} className="scat__home__form">
-                            <div className="scat__form__title">
-                                Бесплатно выясню причину поломки и озвучу стоимость работ
-                            </div>
-
-                            <input type="text" name="customer_name" id="customer_name_field"
-                                   placeholder="Ваше имя"
-                            />
-
-                            <label htmlFor="customer_phone"
-                                   style={{
-                                       color: '#fc0000',
-                                       display: phoneError ? 'block' : 'none',
-                                       textAlign: 'left'
-                                   }}>{phoneError}</label>
-                            <input type="text" name="customer_phone" id="customer_phone"
-                                   placeholder="Номер телефона"
-                                   onChange={() => {
-                                       setPhoneError(false)
-                                   }}
-                            />
-
-                            <ActionButton
-                                text={"Получить консультацию"} state={mainFormBtnState}
-                            />
-
-
-                        </form>
-
-                    </div>
-                    <div className="scat__content__right">
-                        <img src={`${process.env.PUBLIC_URL}/sections/washing__section__img.png`} alt=""/>
-                    </div>
-                </div>
-            </section>
+            <SectionCatMain
+                title_gen={"Стиральных машин"}
+                brand={brand}
+                image={`${process.env.PUBLIC_URL}/sections/washing/washing_master.png`}
+                image_sm={`${process.env.PUBLIC_URL}/sections/washing/washing_master_sm.png`}
+            />
 
             <SectionProblems
                 title_gen={"Популярные поломки стиральных машин"}

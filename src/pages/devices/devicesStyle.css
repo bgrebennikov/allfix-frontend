@@ -1,0 +1,67 @@
+.sdv__description__link{
+    color: #007dff;
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 599px){
+    .section__device__details {
+        padding: 2em 1.5em;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1199px){
+
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1650px){
+    .section__device__details {
+        padding: 2em 100px;
+    }
+
+    .sdv__content{
+        display: flex;
+    }
+
+    .device__img__wrapper{
+        flex: 1;
+    }
+
+    .device__img__wrapper > img{
+        max-height: 340px;
+        max-width: 250px;
+    }
+
+    .sdv__body{
+        flex: 3;
+        padding: 0 2em;
+    }
+
+    .sdv__recommend{
+        flex: 1;
+    }
+
+    .sdv__device__title{
+        width: 70%;
+    }
+
+    .sdv__price__list{
+
+    }
+
+    .sdv__price__item{
+        display: flex;
+        list-style: none;
+        gap: 1em;
+        margin: 1.25em 0;
+    }
+
+    .sdv__description{
+        line-height: 18pt;
+    }
+
+}
+
+@media only screen and (min-width: 1650px){
+
+}

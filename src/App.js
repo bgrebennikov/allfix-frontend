@@ -18,6 +18,7 @@ import SectionContacts from "./pages/sections/SectionContacts";
 import {Reviews} from "@mui/icons-material";
 import ReviewsPage from "./pages/ReviewsPage";
 import {YMInitializer} from "react-yandex-metrika";
+import DeviceDetail from "./pages/devices/DeviceDetails";
 
 function App() {
 
@@ -72,6 +73,7 @@ function App() {
                     <Route path={"/"} element={<LandingRoute/>}>
 
                         <Route element={<HomePage/>} path={"/"}/>
+                        <Route element={<DeviceDetail/>} path={"/device/:deviceName"} />
                         {/*<Route element={<HomePage/>} path={"/:brand"}/>*/}
                         <Route element={<ComputersPage/>} path={"/pc"}/>
 
