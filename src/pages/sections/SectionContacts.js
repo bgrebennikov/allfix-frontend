@@ -75,6 +75,13 @@ export default function SectionContacts() {
                                 <div className="sc__item__body">
                                     Круглосуточно, без перерывов и выходных
                                 </div>
+
+                                <br/>
+                                <p
+                                    style={{
+                                        fontSize: "11pt"
+                                    }}
+                                >Самозанятый: Игорь Лебедев, ИНН: 636600279657</p>
                             </div>
                         </div>
 

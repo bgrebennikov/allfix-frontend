@@ -53,7 +53,7 @@ export default function SectionCatMain({
             }>
 
                 <div className="phone__number__sm">
-                    <a href="tel:+79991710049">+7 999-171-00-49</a>
+                    <a href="tel:+79934710049">+7 993-471-00-49</a>
                     <p>
                         Бесплатная консультация
                     </p>
