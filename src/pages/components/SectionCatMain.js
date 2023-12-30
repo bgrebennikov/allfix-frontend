@@ -20,13 +20,11 @@ export default function SectionCatMain({
 
         const formElements = e.target.elements;
         const phone = formElements.customer_phone.value;
-        const client_name = formElements.customer_name_field.value;
 
         sendFeedbackForm(
             {
                 phone: phone,
-                from_landing: window.location.pathname,
-                client_name: client_name
+                from_landing: window.location.pathname
             }
         ).then(response => {
             if (response.status === 200) {
@@ -73,9 +71,6 @@ export default function SectionCatMain({
                                 Бесплатно выясню причину поломки и озвучу стоимость работ
                             </div>
 
-                            <input type="text" name="customer_name" id="customer_name_field"
-                                   placeholder="Ваше имя"
-                            />
 
                             <p
                                 className="phone_error_label"

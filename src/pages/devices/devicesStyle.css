@@ -3,24 +3,186 @@
     text-decoration: underline;
 }
 
+.sdv__btn__yellow{
+    background-color: #FFC700;
+}
+
+.sdv__btn__blue{
+    background-color: #0088CC;
+    color: white;
+}
+
 
 @media only screen and (max-width: 599px){
     .section__device__details {
         padding: 2em 1.5em;
     }
+
+    .sdv__content{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .device__img__wrapper{
+        flex: 1;
+    }
+
+    .device__img__wrapper > img{
+        max-height: 80vh;
+        min-height: 60vh;
+        max-width: 90%;
+    }
+
+    .device__img__wrapper{
+        display: flex;
+        flex: 0;
+        justify-content: center;
+    }
+
+    .sdv__body__wrapper{
+        display: block;
+    }
+
+    .sdv__body{
+        flex: 1;
+        margin-top: 1em;
+    }
+
+    .sdv__body__row{
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: space-between;
+    }
+
+    .sdv__recommend{
+        flex: 3;
+        min-width: 280px;
+        margin-top: .5em;
+    }
+
+    .sdv__device__title{
+        width: 100%;
+        margin-bottom: .5em;
+    }
+
+    .sdv__price__list{
+
+    }
+
+    .sdv__price__item{
+        display: flex;
+        list-style: none;
+        gap: 1em;
+        margin: 1.25em 0;
+    }
+
+    .sdv__description{
+        line-height: 18pt;
+    }
+
+    .sdv__action__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em;
+        background-color: #E8F9FF;
+        width: calc(100% - 2em);
+        gap: 1em;
+        border-radius: 12px;
+        margin-bottom: 1em;
+    }
+
+    .sdv__action__btns{
+        display: flex;
+        flex-direction: column;
+        flex: 0;
+        width: 100%;
+        gap: .5em;
+    }
+
+    .sdv__action__btns > button{
+        padding: 1.3em;
+        font-size: 14pt;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .sdv__action__body{
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        justify-items: center;
+        gap: .5em;
+        text-align: center;
+    }
+
+    .sdv__action__body > h3{
+
+    }
+
+    .sdv__action__body > a{
+        font-weight: bold;
+        font-size: 22pt;
+        color: #007dff;
+        text-decoration: underline;
+        display: block;
+        width: fit-content;
+        text-underline-offset: 3pt;
+        text-align: center;
+        align-self: center;
+    }
+
+    /*  NEW  */
+
+    .sdv__rec__preview{
+        margin: .5em 0;
+        height: 200px;
+        text-align: center;
+        background-image: url("https://candy-one-remonts.ru/assets/img/stiralka/candy-cs34-1051-d12-07.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 12px;
+    }
+
+    .sdv__rec__cost{
+        letter-spacing: -1pt;
+        font-size: 24pt;
+    }
+
+    .sdv__rec__title{
+        font-weight: 500;
+        margin: .5em 0;
+        font-size: 16pt;
+    }
+
+    .sdv__rec__compare__text{
+        line-height: 16pt;
+        font-size: 14pt;
+        margin: .5em 0;
+    }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1199px){
 
-}
+    .header__box{
+        width: 100%;
+        height: 96px;
+    }
 
-@media only screen and (min-width: 1200px) and (max-width: 1650px){
     .section__device__details {
         padding: 2em 100px;
     }
 
     .sdv__content{
         display: flex;
+        flex-direction: column;
     }
 
     .device__img__wrapper{
@@ -30,15 +192,33 @@
     .device__img__wrapper > img{
         max-height: 340px;
         max-width: 250px;
+        min-height: 340px;
+        padding: .1em;
+    }
+
+    .device__img__wrapper{
+        display: flex;
+        flex: 0;
+    }
+
+    .sdv__body__wrapper{
+        display: block;
     }
 
     .sdv__body{
-        flex: 3;
-        padding: 0 2em;
+        flex: 1;
+        padding: 2em;
+    }
+
+    .sdv__body__row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .sdv__recommend{
-        flex: 1;
+        flex: 3;
+        min-width: 280px;
     }
 
     .sdv__device__title{
@@ -60,6 +240,231 @@
         line-height: 18pt;
     }
 
+    .sdv__action__wrapper{
+        display: flex;
+        padding: 1em;
+        flex-direction: column;
+        background-color: #E8F9FF;
+        width: 100%;
+        gap: 1em;
+        border-radius: 12px;
+    }
+
+    .sdv__action__btns{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+        gap: .5em;
+    }
+
+    .sdv__action__btns > button{
+        padding: 1.5em;
+        font-size: 12pt;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .sdv__action__body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .5em;
+    }
+
+    .sdv__action__body > h3{
+
+    }
+
+    .sdv__action__body > a{
+        font-weight: bold;
+        font-size: 22pt;
+        color: #007dff;
+        text-decoration: underline;
+        display: block;
+        width: fit-content;
+        text-underline-offset: 3pt;
+    }
+
+    /*  NEW  */
+
+    .sdv__rec__preview{
+        margin: 1em 0;
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        background-image: url("https://candy-one-remonts.ru/assets/img/stiralka/candy-cs34-1051-d12-07.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 12px;
+    }
+
+    .sdv__rec__cost{
+        letter-spacing: -1pt;
+        text-align: center;
+    }
+
+    .sdv__rec__title{
+        font-weight: 600;
+        margin: .5em 0;
+        text-align: center;
+    }
+
+    .sdv__rec__compare__text{
+        line-height: 16pt;
+        margin: .5em 0;
+        text-align: center;
+    }
+
+    .sdv__recommend > h3{
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .section__device__details {
+        padding: 2em 100px;
+    }
+
+    .sdv__content{
+        display: flex;
+    }
+
+    .device__img__wrapper{
+        flex: 1;
+    }
+
+    .device__img__wrapper > img{
+        max-height: 340px;
+        max-width: 250px;
+        min-width: 250px;
+        padding: .1em;
+    }
+
+    .device__img__wrapper{
+        display: flex;
+        flex: 0;
+    }
+
+    .sdv__body__wrapper{
+        display: block;
+    }
+
+    .sdv__body{
+        flex: 1;
+        padding: 0 2em;
+    }
+
+    .sdv__body__row{
+        display: flex;
+    }
+
+    .sdv__recommend{
+        flex: 3;
+        min-width: 280px;
+    }
+
+    .sdv__device__title{
+        width: 70%;
+    }
+
+    .sdv__price__list{
+
+    }
+
+    .sdv__price__item{
+        display: flex;
+        list-style: none;
+        gap: 1em;
+        margin: 1.25em 0;
+    }
+
+    .sdv__description{
+        line-height: 18pt;
+    }
+
+    .sdv__action__wrapper{
+        display: flex;
+        padding: 1em;
+        background-color: #E8F9FF;
+        width: 100%;
+        gap: 2.5em;
+        border-radius: 12px;
+        margin: 1em 2em 0 0;
+    }
+
+    .sdv__action__btns{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: calc(250px - 2em);
+        gap: .5em;
+    }
+
+    .sdv__action__btns > button{
+        padding: 1em;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+        max-width: 250px;
+        width: 100%;
+        font-weight: bold;
+    }
+
+    .sdv__action__body{
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .25em;
+    }
+
+    .sdv__action__body > h3{
+
+    }
+
+    .sdv__action__body > a{
+        font-weight: bold;
+        font-size: 22pt;
+        color: #007dff;
+        text-decoration: underline;
+        display: block;
+        width: fit-content;
+        text-underline-offset: 3pt;
+    }
+
+    /*  NEW  */
+
+    .sdv__rec__preview{
+        margin: 1em 0;
+        width: 100%;
+        max-width: 360px;
+        height: 200px;
+        text-align: center;
+        background-image: url("https://candy-one-remonts.ru/assets/img/stiralka/candy-cs34-1051-d12-07.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border-radius: 12px;
+    }
+
+    .sdv__rec__cost{
+        letter-spacing: -1pt;
+    }
+
+    .sdv__rec__title{
+        font-weight: 600;
+        margin: .5em 0;
+    }
+
+    .sdv__rec__compare__text{
+        line-height: 16pt;
+        margin: .5em 0;
+    }
 }
 
 @media only screen and (min-width: 1650px){

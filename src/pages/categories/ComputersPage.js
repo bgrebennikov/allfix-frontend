@@ -8,6 +8,8 @@ import SectionContacts from "../sections/SectionContacts";
 import SectionCatMain from "../components/SectionCatMain";
 import {SectionProblems} from "../sections/SectionProblems";
 import {useParams} from "react-router-dom";
+import {useContext, useEffect} from "react";
+import {PageStateContext} from "../../common/PageStateContext";
 
 export default function ComputersPage(params) {
 
@@ -77,6 +79,13 @@ export default function ComputersPage(params) {
     ]
     const routeParams = useParams();
     const brand = routeParams["brand"]
+
+    const {currentPage, setCurrentPage} = useContext(PageStateContext);
+
+    useEffect(() => {
+        setCurrentPage("Компьютеры")
+        console.log(currentPage)
+    });
 
 
     return (

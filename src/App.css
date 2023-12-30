@@ -286,6 +286,25 @@ button {
         clip-path: polygon(0 101%, 101% 101%, 100% 100%, 100% 0)
     }
 
+    /* SECTION PRICES */
+
+    .section__prices{
+        padding: 0 2em;
+        margin-top: 2.5em;
+    }
+
+    .section__prices > h1{
+        text-align: center;
+        font-size: 24pt;
+    }
+
+    .section__price__list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 1em;
+    }
+
     /* SECTION REPAIR ITEMS */
     .section__repair__items {
         padding: 0;
@@ -1308,6 +1327,24 @@ button {
         clip-path: polygon(0 101%, 101% 101%, 100% 100%, 100% 0)
     }
 
+    /* SECTION PRICES */
+
+    .section__prices{
+        padding: 2em 100px;
+    }
+
+    .section__prices > h1{
+        text-align: center;
+        font-size: 24pt;
+    }
+
+    .section__price__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2em;
+    }
+
     /* SECTION REPAIR ITEMS */
     .section__repair__items {
         margin: 0 auto;
@@ -2290,6 +2327,24 @@ button {
         clip-path: polygon(0 101%, 101% 101%, 100% 100%, 100% 0)
     }
 
+    /* SECTION PRICES */
+
+    .section__prices{
+        padding: 2em 100px;
+    }
+
+    .section__prices > h1{
+        text-align: center;
+        font-size: 24pt;
+    }
+
+    .section__price__list{
+        display: flex;
+        gap: 4em;
+        justify-content: center;
+        margin-top: 2em;
+    }
+
     /* SECTION REPAIR ITEMS */
     .section__repair__items {
         padding: 100px;
@@ -3023,6 +3078,9 @@ button {
 }
 
 /*  Reviews Page  */
+
+/* SECTION PRICES */
+
 
 .reviews__content{
     padding: 2em 100px;

@@ -15,10 +15,10 @@ import SmmManage from "./pages/manage/dashboard/SmmManage";
 import PrivateRoute from "./hooks/PrivateRoute";
 import ThanksPage from "./pages/ThanksPage";
 import SectionContacts from "./pages/sections/SectionContacts";
-import {Reviews} from "@mui/icons-material";
 import ReviewsPage from "./pages/ReviewsPage";
 import {YMInitializer} from "react-yandex-metrika";
 import DeviceDetail from "./pages/devices/DeviceDetails";
+import {PageStateProvider} from "./common/PageStateContext";
 
 function App() {
 
@@ -67,43 +67,45 @@ function App() {
 
     return (
         <>
-            <Routes>
-                <Route path={"/"}>
+            <PageStateProvider>
+                <Routes>
+                    <Route path={"/"}>
 
-                    <Route path={"/"} element={<LandingRoute/>}>
+                        <Route path={"/"} element={<LandingRoute/>}>
 
-                        <Route element={<HomePage/>} path={"/"}/>
-                        <Route element={<DeviceDetail/>} path={"/device/:deviceName"} />
-                        {/*<Route element={<HomePage/>} path={"/:brand"}/>*/}
-                        <Route element={<ComputersPage/>} path={"/pc"}/>
+                            <Route element={<HomePage/>} path={"/"}/>
+                            <Route element={<DeviceDetail/>} path={"/device/:deviceName"} />
+                            {/*<Route element={<HomePage/>} path={"/:brand"}/>*/}
+                            <Route element={<ComputersPage/>} path={"/pc"}/>
 
-                        <Route element={<ComputersPage title={"системных блоков"}/>} path={"/pc/sys_block"}/>
-                        <Route element={<ComputersPage title={"ноутбуков"}/>} path={"/pc/laptop"}/>
-                        <Route element={<ComputersPage title={"нетбуков"}/>} path={"/pc/notebook"}/>
-                        <Route element={<ComputersPage title={"моноблоков"}/>} path={"/pc/monoblock"}/>
+                            <Route element={<ComputersPage title={"системных блоков"}/>} path={"/pc/sys_block"}/>
+                            <Route element={<ComputersPage title={"ноутбуков"}/>} path={"/pc/laptop"}/>
+                            <Route element={<ComputersPage title={"нетбуков"}/>} path={"/pc/notebook"}/>
+                            <Route element={<ComputersPage title={"моноблоков"}/>} path={"/pc/monoblock"}/>
 
 
-                        <Route element={<ComputersPage/>} path={"/pc/:brand"}/>
+                            <Route element={<ComputersPage/>} path={"/pc/:brand"}/>
 
-                        <Route element={<WashingsPage/>} path={"/washing"}/>
-                        <Route element={<WashingsPage/>} path={"/washing/:brand"}/>
+                            <Route element={<WashingsPage/>} path={"/washing"}/>
+                            <Route element={<WashingsPage/>} path={"/washing/:brand"}/>
 
-                        <Route element={<SectionContacts/>} path={"/contacts"}/>
-                        <Route element={<ThanksPage/>} path={"/thanks"}/>
-                        <Route element={<ReviewsPage/>} path={"/reviews"} />
+                            <Route element={<SectionContacts/>} path={"/contacts"}/>
+                            <Route element={<ThanksPage/>} path={"/thanks"}/>
+                            <Route element={<ReviewsPage/>} path={"/reviews"} />
 
-                        <Route path={"/public/*"}/>
-                        <Route element={<NotFoundPage/>} path={"*"}/>
+                            <Route path={"/public/*"}/>
+                            <Route element={<NotFoundPage/>} path={"*"}/>
+
+                        </Route>
+
+                        <Route path={"/blog"} element={<BlogRoute/>}>
+                            <Route path={"/blog/"} element={<BlogMain/>}/>
+                        </Route>
 
                     </Route>
-
-                    <Route path={"/blog"} element={<BlogRoute/>}>
-                        <Route path={"/blog/"} element={<BlogMain/>}/>
-                    </Route>
-
-                </Route>
-
-            </Routes>
+                    
+                </Routes>
+            </PageStateProvider>
 
             <YMInitializer accounts={[95469611]} options={{webvisor: true}}/>
 
